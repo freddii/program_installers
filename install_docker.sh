@@ -6,8 +6,11 @@ set -eu
 #
 #based on https://docs.docker.com/engine/install/ubuntu/
 #grep --color --perl-regexp 'vmx|svm' /proc/cpuinfo
-
-sudo apt -y update && sudo apt -y upgrade
+echo "Run the following command to uninstall all conflicting packages:"
+for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+#
+sudo apt -y update
+#sudo apt -y upgrade
 #setup the repo
 #sudo apt-get install \
 #    apt-transport-https \
@@ -15,10 +18,14 @@ sudo apt -y update && sudo apt -y upgrade
 #    curl \
 #    gnupg-agent \
 #    software-properties-common -y
-sudo apt install lsb-release gnupg2 apt-transport-https ca-certificates curl software-properties-common -y
-#Add Docker’s official GPG key
+#sudo apt install lsb-release gnupg2 apt-transport-https ca-certificates curl software-properties-common -y
+sudo apt-get install ca-certificates curl gnupg
+echo "Add Docker’s official GPG key"
 #curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/debian.gpg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+#curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/debian.gpg
 #verify key
 #sudo apt-key fingerprint 0EBFCD88 
 #search for 9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
@@ -27,10 +34,17 @@ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o 
 #   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
 #   $(lsb_release -cs) \
 #   stable"
-sudo add-apt-repository "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+#
+echo "set up the repository:"
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+#sudo add-apt-repository "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
 #update repo and install docker
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+#sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 #test docker
 sudo docker run hello-world
 
