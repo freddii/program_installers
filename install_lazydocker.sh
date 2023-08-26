@@ -1,7 +1,7 @@
 #!/bin/bash
-# https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh
+
 # allow specifying different destination directory
-DIR="${DIR:-"/usr/local/bin"}"
+DIR="${DIR:-"$HOME/.local/bin"}"
 
 # map different architecture variations to the available binaries
 ARCH=$(uname -m)
@@ -17,10 +17,8 @@ GITHUB_LATEST_VERSION=$(curl -L -s -H 'Accept: application/json' https://github.
 GITHUB_FILE="lazydocker_${GITHUB_LATEST_VERSION//v/}_$(uname -s)_${ARCH}.tar.gz"
 GITHUB_URL="https://github.com/jesseduffield/lazydocker/releases/download/${GITHUB_LATEST_VERSION}/${GITHUB_FILE}"
 
-#sudo apt install -yqqq curl
-
 # install/update the local binary
 curl -L -o lazydocker.tar.gz $GITHUB_URL
 tar xzvf lazydocker.tar.gz lazydocker
-sudo mv -f lazydocker "$DIR"
-rm lazydocker.tar.gz
+install -Dm 755 lazydocker -t "$DIR"
+rm lazydocker lazydocker.tar.gz
