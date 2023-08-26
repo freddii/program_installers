@@ -19,7 +19,7 @@ sudo apt -y update
 #    gnupg-agent \
 #    software-properties-common -y
 #sudo apt install lsb-release gnupg2 apt-transport-https ca-certificates curl software-properties-common -y
-sudo apt-get install ca-certificates curl gnupg
+sudo apt install ca-certificates curl gnupg -y
 echo "Add Docker’s official GPG key"
 #curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo install -m 0755 -d /etc/apt/keyrings
@@ -43,7 +43,7 @@ echo \
 #sudo add-apt-repository "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
 #update repo and install docker
 sudo apt update
-sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 #sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 #test docker
 sudo docker run hello-world
