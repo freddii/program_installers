@@ -176,6 +176,7 @@ response=$(dialog --stdout --title setup-linux-nogui \
 "INTERNET-tmate32" "" off \
 "INTERNET-tmate-pi" "" off \
 "INTERNET-portmaster" "" off \
+"INTERNET-dropbox" "" off \
 "MESSENGER-discord" "messenger discord" off \
 "MESSENGER-telegram-desktop" "messenger telegram" off \
 "MESSENGER-kontalk-desktop" "messenger kontalk" off \
@@ -451,6 +452,8 @@ for word in $response ; do
       	INTERNET-tmate32) program_installer "tmate32" ;;
       	INTERNET-tmate-pi) program_installer "tmate-pi" ;;
       	INTERNET-portmaster) program_installer "portmaster" ;;
+      	INTERNET-dropbox) program_installer "dropbox" ;;
+      	
       	MESSENGER-discord) program_installer "discord" ;;
       	MESSENGER-telegram-desktop) program_installer "telegram-desktop" ;;
       	MESSENGER-kontalk-desktop) program_installer "kontalk-desktop" ;;
