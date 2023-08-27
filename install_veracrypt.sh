@@ -31,7 +31,7 @@ cd /tmp
 #wget https://launchpad.net/veracrypt/trunk/1.25.9/+download/veracrypt-1.25.9-Debian-12-amd64.deb
 wget https://launchpadlibrarian.net/674243941/veracrypt-1.25.9-Debian-12-amd64.deb
 sudo dpkg -i veracrypt-1.25.9-Debian-12-amd64.deb
-sudo apt install -f
+sudo apt install -f -y
 rm veracrypt-1.25.9-Debian-12-amd64.deb
 #
 cat << EOF | tee /home/$USER/.local/share/applications/mount_veracrypt.desktop
