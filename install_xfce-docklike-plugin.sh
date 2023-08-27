@@ -16,8 +16,8 @@ fi
 #
 mkdir -p /home/$USER/programs_setup/xfce-docklike-plugin
 cd /home/$USER/programs_setup/xfce-docklike-plugin
-#git clone https://github.com/nsz32/docklike-plugin && cd docklike-plugin
-git clone https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin.git && cd xfce4-docklike-plugin
+git clone https://github.com/nsz32/docklike-plugin && cd docklike-plugin
+#git clone https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin.git && cd xfce4-docklike-plugin
 ./autogen.sh
 make
 sudo make install
