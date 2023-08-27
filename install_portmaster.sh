@@ -4,7 +4,7 @@
 set -eu
 #
 cd /tmp
-wget -O portmaster-installer.deb https://updates.safing.io/latest/linux_amd64/packages/portmaster-installer.deb
-sudo dpkg -i portmaster-installer.deb
-sudo apt-get install -f -y
+wget -O portmaster-installer.deb https://updates.safing.io/latest/linux_amd64/packages/portmaster-installer.deb;
+sudo dpkg -i portmaster-installer.deb;
+sudo apt-get install -f -y;
 rm portmaster-installer.deb
