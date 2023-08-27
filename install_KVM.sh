@@ -78,8 +78,8 @@ cd /kvm/iso
 #sudo wget -q --show-progress https://github.com/helloSystem/ISO/releases/download/r0.7.0/hello-0.7.0_0G160-FreeBSD-13.0-amd64.iso
 #sudo wget -q --show-progress https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.6.0-amd64-netinst.iso
 #sudo wget -q --show-progress https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.7.0-amd64-netinst.iso
-sudo wget -q --show-progress https://cdimage.debian.org/cdimage/archive/11.7.0/amd64/iso-cd/debian-11.7.0-amd64-netinst.iso
-#sudo wget -q --show-progress https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.1.0-amd64-netinst.iso
+#sudo wget -q --show-progress https://cdimage.debian.org/cdimage/archive/11.7.0/amd64/iso-cd/debian-11.7.0-amd64-netinst.iso
+sudo wget -q --show-progress https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.1.0-amd64-netinst.iso
 ##create a new virtual machine
 #cd /tmp
 #wget https://cdn.haiku-os.org/haiku-release/r1beta2/haiku-r1beta2-x86_64-anyboot.zip
@@ -363,25 +363,25 @@ cd /kvm/iso
 #--cdrom /kvm/iso/fossapup64-9.5.iso \
 #--boot cdrom,hd
 #
-#sudo virt-install --name d12_s_s01 \
-#--os-variant linux2022 \
-#--ram 2048 \
-#--disk /kvm/disk/d12_s_s01.img,device=disk,bus=virtio,size=15,format=qcow2 \
-#--graphics vnc,listen=0.0.0.0 \
-#--noautoconsole \
-#--hvm \
-#--cdrom /kvm/iso/debian-12.1.0-amd64-netinst.iso \
-#--boot cdrom,hd
-#
-sudo virt-install --name d11_s_s01 \
---os-variant debian11 \
+sudo virt-install --name d12_s_s01 \
+--os-variant linux2022 \
 --ram 2048 \
---disk /kvm/disk/d11_s_s01.img,device=disk,bus=virtio,size=15,format=qcow2 \
+--disk /kvm/disk/d12_s_s01.img,device=disk,bus=virtio,size=15,format=qcow2 \
 --graphics vnc,listen=0.0.0.0 \
 --noautoconsole \
 --hvm \
---cdrom /kvm/iso/debian-11.7.0-amd64-netinst.iso \
+--cdrom /kvm/iso/debian-12.1.0-amd64-netinst.iso \
 --boot cdrom,hd
+#
+#sudo virt-install --name d11_s_s01 \
+#--os-variant debian11 \
+#--ram 2048 \
+#--disk /kvm/disk/d11_s_s01.img,device=disk,bus=virtio,size=15,format=qcow2 \
+#--graphics vnc,listen=0.0.0.0 \
+#--noautoconsole \
+#--hvm \
+#--cdrom /kvm/iso/debian-11.7.0-amd64-netinst.iso \
+#--boot cdrom,hd
 #
 #sudo virt-install --name d10_t_s01 \
 #--os-variant debian10 \
