@@ -15,7 +15,7 @@ sudo apt-get install -f -y
 rm cudatext_amd64.deb
 #
 #
-folder_name="cudatext"
+#folder_name="cudatext"
 #
 #if [ -d "/home/$USER/programs_setup/$folder_name" ]; then
 #  cd /home/$USER/
