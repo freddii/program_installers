@@ -2,7 +2,7 @@
 #to run this script go into the folder where it is then run: ./install_veracrypt.sh
 #personal data
 #
-set -eu
+#set -eu
 #
 #sudo apt-get install dmsetup -y
 #dpkg -l | grep -qw dmsetup || sudo apt-get install dmsetup -y
@@ -31,6 +31,7 @@ cd /tmp
 #wget https://launchpad.net/veracrypt/trunk/1.25.9/+download/veracrypt-1.25.9-Debian-12-amd64.deb
 wget https://launchpadlibrarian.net/674243941/veracrypt-1.25.9-Debian-12-amd64.deb
 sudo dpkg -i veracrypt-1.25.9-Debian-12-amd64.deb
+sudo apt install -f
 rm veracrypt-1.25.9-Debian-12-amd64.deb
 #
 cat << EOF | tee /home/$USER/.local/share/applications/mount_veracrypt.desktop
