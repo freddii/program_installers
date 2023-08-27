@@ -34,6 +34,8 @@ sudo dpkg -i veracrypt-1.25.9-Debian-12-amd64.deb
 sudo apt install -f -y
 rm veracrypt-1.25.9-Debian-12-amd64.deb
 #
+mkdir -p /home/$USER/.local/share/applications/
+#
 cat << EOF | tee /home/$USER/.local/share/applications/mount_veracrypt.desktop
 [Desktop Entry]
 Name=mount_veracrypt
