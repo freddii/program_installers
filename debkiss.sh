@@ -137,6 +137,7 @@ response=$(dialog --stdout --title setup-linux-nogui \
 "install-hplip" "---" off \
 "install-firmware-nonfree" "---" off \
 "cleanup" "---" off \
+"install-all-flatpaks" "---" off \
 "APPIMAGE-get-appimages" "download appimages with no gui" off \
 "APPIMAGE-appimaged" "appimage launcher" off \
 "CONFIGURE-dotfiles" "---" off \
@@ -410,6 +411,7 @@ for word in $response ; do
       	install-hplip) program_installer "hplip" ;;
       	install-firmware-nonfree) program_installer "firmware-nonfree" ;;
       	cleanup) clean_up ;;
+      	install-all-flatpaks) program_installer "all-flatpaks" ;;
       	APPIMAGE-get-appimages) program_installer "get-appimages" ;;
       	APPIMAGE-appimaged) program_installer "appimaged" ;;
       	CONFIGURE-dotfiles) program_installer "dotfiles" ;;
