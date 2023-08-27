@@ -8,4 +8,5 @@ wget https://linux.dropbox.com/packages/ubuntu/dropbox_2022.12.05_amd64.deb
 #wget -q --show-progress -O dropbox.deb https://www.dropbox.com/download?$(wget -q https://www.dropbox.com/de/install-linux -O - | egrep 'dl=packages/ubuntu/dropbox_[0-9,.-]{1,20}_amd64.deb' -o | head -1)
 sudo dpkg -i dropbox*.deb
 rm dropbox*.deb
-sudo apt-get install -f -y
+sudo apt install -f -y
+sudo apt install python3-gpg -y
