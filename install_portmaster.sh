@@ -8,3 +8,4 @@ wget -O portmaster-installer.deb https://updates.safing.io/latest/linux_amd64/pa
 sudo dpkg -i portmaster-installer.deb;
 sudo apt-get install -f -y;
 rm portmaster-installer.deb
+sudo apt install iptables -y
