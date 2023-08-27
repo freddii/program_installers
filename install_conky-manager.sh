@@ -18,7 +18,7 @@ cd conky-manager2
 make
 #sudo checkinstall #not working
 #./build-deb.sh #sudo apt install bzr-builddeb bzr
-sudo apt install rsync psmisc -y
+sudo apt install rsync psmisc imagemagick -y
 #
 sudo make install
 mkdir -p /home/$USER/.conky/
