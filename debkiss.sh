@@ -277,6 +277,7 @@ response=$(dialog --stdout --title setup-linux-nogui \
 "SERVER-gitea-pi" "---" off \
 "SERVER-KVM" "---" off \
 "SERVER-butt" "---" off \
+"SERVER-vpn-server" "---" off \
 "DEVELOPMENT-pibakery" "create custom images for rpi" off \
 "DEVELOPMENT-godot2" "godot engine v2" off \
 "DEVELOPMENT-godot3" "godot engine v3" off \
@@ -453,7 +454,6 @@ for word in $response ; do
       	INTERNET-tmate-pi) program_installer "tmate-pi" ;;
       	INTERNET-portmaster) program_installer "portmaster" ;;
       	INTERNET-dropbox) program_installer "dropbox" ;;
-      	
       	MESSENGER-discord) program_installer "discord" ;;
       	MESSENGER-telegram-desktop) program_installer "telegram-desktop" ;;
       	MESSENGER-kontalk-desktop) program_installer "kontalk-desktop" ;;
@@ -554,6 +554,7 @@ for word in $response ; do
       	SERVER-gitea-pi) program_installer "gitea-pi" ;;
       	SERVER-KVM) program_installer "KVM" ;;
       	SERVER-butt) program_installer "butt" ;;
+      	SERVER-vpn-server) program_installer "vpn-server" ;;
       	DEVELOPMENT-pibakery) program_installer "pibakery" ;;
       	DEVELOPMENT-godot2) program_installer "godot2" ;;
       	DEVELOPMENT-godot3) program_installer "godot3" ;;
