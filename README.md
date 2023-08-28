@@ -16,7 +16,7 @@ or:
 sudo apt update && sudo apt install git -y  -->
 
 ```
-bash -c "$(curl -fsSL https://git.io/debkiss)"
+bash -c "$(curl -fsSL https://t1p.de/debkiss-no-gui)"
 ```
 
 <!--curl -sSL https://git.io/debkiss | bash-->
