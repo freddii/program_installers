@@ -11,8 +11,8 @@ folder_name="xfce-docklike-plugin"
 sudo apt install libxfce4panel-2.0-dev libwnck-3-dev xfce4-dev-tools libxfce4ui-2-dev make g++ -y
 #
 if [ -d "/home/$USER/programs_setup/$folder_name" ]; then
-  #cd /home/$USER/programs_setup/xfce-docklike-plugin/xfce4-docklike-plugin
-  cd /home/$USER/programs_setup/xfce-docklike-plugin/docklike-plugin
+  cd /home/$USER/programs_setup/xfce-docklike-plugin/xfce4-docklike-plugin
+  #cd /home/$USER/programs_setup/xfce-docklike-plugin/docklike-plugin
   sudo make uninstall
   cd /home/$USER/
   sudo rm -rf /home/$USER/programs_setup/$folder_name
@@ -20,8 +20,8 @@ fi
 #
 mkdir -p /home/$USER/programs_setup/$folder_name
 cd /home/$USER/programs_setup/$folder_name
-#git clone https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin.git && cd xfce4-docklike-plugin
-git clone https://github.com/nsz32/docklike-plugin && cd docklike-plugin
+git clone https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin.git && cd xfce4-docklike-plugin
+#git clone https://github.com/nsz32/docklike-plugin && cd docklike-plugin
 ./autogen.sh
 make
 sudo make install
