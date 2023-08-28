@@ -5,6 +5,9 @@ set -eu
 #
 folder_name="xfce-docklike-plugin"
 #
+#wget https://launchpad.net/~xubuntu-dev/+archive/ubuntu/extras/+files/xfce4-docklike-plugin_0.4.1-0ppa1~bpo23.04_amd64.deb
+#sudo dpkg -i xfce4-docklike-plugin_0.4.1-0ppa1~bpo23.04_amd64.deb
+#
 sudo apt install libxfce4panel-2.0-dev libwnck-3-dev xfce4-dev-tools libxfce4ui-2-dev make g++ -y
 #
 if [ -d "/home/$USER/programs_setup/$folder_name" ]; then
