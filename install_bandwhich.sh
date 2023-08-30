@@ -1,6 +1,13 @@
 #!/bin/bash
 #to run this script go into the folder where it is then run: ./install_bandwhich.sh
-#set -eu
+set -eu
+
+function check_install {
+echo "checking install: "$1
+dpkg -l | grep -qw $1 || sudo apt-get install $1 -y
+}
+
+check_install unp
 
 cd /tmp
 #wget https://github.com/imsnif/bandwhich/releases/download/0.16.0/bandwhich-v0.16.0-x86_64-unknown-linux-musl.tar.gz
