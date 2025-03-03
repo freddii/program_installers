@@ -18,7 +18,8 @@ mkdir -p /home/$USER/programs_setup/$folder_name
 cd /home/$USER/programs_setup/$folder_name
 wget -q --show-progress -O OSgrid.png http://www.osgrid.org/favicon.ico
 #wget https://danbanner.onikenkon.com/osgrid/osgrid-opensim-11072020.v0.9.2.f25b128.zip
-wget https://danbanner.onikenkon.com/osgrid/osgrid-opensim-03232023.v0.9.2.d1466eb.zip
+#wget https://danbanner.onikenkon.com/osgrid/osgrid-opensim-03232023.v0.9.2.d1466eb.zip
+wget https://download.osgrid.org/osgrid-opensim-03232023.v0.9.2.d1466eb.zip
 #wget -q --show-progress $(wget -q https://www.osgrid.org/download.php -O - | egrep 'https://.*/.*/osgrid-opensim-[0-9,v,_.-]{1,20}[0-9,a-z]{1,10}.zip' -o | tail -1)
 dpkg -l | grep -qw unzip || sudo apt-get install unzip -y
 unzip osgrid-opensim-*zip
