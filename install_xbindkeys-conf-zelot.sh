@@ -3,7 +3,7 @@
 #
 #set -eu
 #
-sudo apt-get install xbindkeys xautomation
+sudo apt-get install xbindkeys xautomation -y
 #
 rm /home/$USER/.xbindkeysrc
 cat << 'EOF' | tee /home/$USER/.xbindkeysrc
