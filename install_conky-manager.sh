@@ -8,7 +8,8 @@ if [ -d "/home/$USER/programs_setup/conky-manager2" ]; then
   sudo make uninstall
   rm -rf /home/$USER/programs_setup/conky-manager2
 fi
-dpkg -l | grep -qw conky-all || sudo apt-get install conky-all -y
+#dpkg -l | grep -qw conky-all ||
+sudo apt-get install conky-all -y
 sudo apt-get install build-essential git valac libgee-0.8-dev libgtk-3-dev libjson-glib-dev gettext make -y
 cd /home/$USER/
 mkdir -p /home/$USER/programs_setup/
