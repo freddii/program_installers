@@ -14,7 +14,7 @@ for var in "$@"
 	done
 }
 #
-check_install qemu qemu-kvm qemu-system qemu-utils qemu-efi libvirt-clients libvirt-daemon-system virtinst virt-manager
+check_install qemu-kvm qemu-system qemu-utils libvirt-clients libvirt-daemon-system virtinst virt-manager
 
 #sudo apt-get install qemu qemu-kvm qemu-system qemu-utils -y
 #sudo apt-get install qemu-efi -y #to be able to run arm64 on x86_64
@@ -79,7 +79,8 @@ cd /kvm/iso
 #sudo wget -q --show-progress https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.6.0-amd64-netinst.iso
 #sudo wget -q --show-progress https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.7.0-amd64-netinst.iso
 #sudo wget -q --show-progress https://cdimage.debian.org/cdimage/archive/11.7.0/amd64/iso-cd/debian-11.7.0-amd64-netinst.iso
-sudo wget -q --show-progress https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.1.0-amd64-netinst.iso
+#sudo wget -q --show-progress https://cdimage.debian.org/images/archive/12.1.0/amd64/iso-cd/debian-12.1.0-amd64-netinst.iso
+sudo wget -q --show-progress https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-13.1.0-amd64-netinst.iso
 ##create a new virtual machine
 #cd /tmp
 #wget https://cdn.haiku-os.org/haiku-release/r1beta2/haiku-r1beta2-x86_64-anyboot.zip
@@ -103,7 +104,16 @@ sudo wget -q --show-progress https://cdimage.debian.org/debian-cd/current/amd64/
 #fi
 #
 cd /kvm/iso
-#
+# When creating a guest with virt-install you need to specify the –os-variant.
+
+# To get a list of acceptable values, first install the libosinfo-bin package
+
+# sudo apt install libosinfo-bin
+
+# before running the command below:
+
+# osinfo-query os
+
 #echo "after install enable ssh: sudo raspi-config > interface options > ssh > enable"
 #echo "shut it down: sudo halt"
 #echo "change in virt manager > rightclick >open > i (show virtual hardware device) > NIC > Network source > virtual network default nat"
@@ -363,15 +373,25 @@ cd /kvm/iso
 #--cdrom /kvm/iso/fossapup64-9.5.iso \
 #--boot cdrom,hd
 #
-sudo virt-install --name d12_s_s01 \
---os-variant linux2022 \
+sudo virt-install --name d13_s_s01 \
+--os-variant debian13 \
 --ram 2048 \
---disk /kvm/disk/d12_s_s01.img,device=disk,bus=virtio,size=15,format=qcow2 \
+--disk /kvm/disk/d13_s_s01.img,device=disk,bus=virtio,size=15,format=qcow2 \
 --graphics vnc,listen=0.0.0.0 \
 --noautoconsole \
 --hvm \
---cdrom /kvm/iso/debian-12.1.0-amd64-netinst.iso \
+--cdrom /kvm/iso/debian-13.1.0-amd64-netinst.iso \
 --boot cdrom,hd
+#
+#sudo virt-install --name d12_s_s01 \
+#--os-variant linux2022 \
+#--ram 2048 \
+#--disk /kvm/disk/d12_s_s01.img,device=disk,bus=virtio,size=15,format=qcow2 \
+#--graphics vnc,listen=0.0.0.0 \
+#--noautoconsole \
+#--hvm \
+#--cdrom /kvm/iso/debian-12.1.0-amd64-netinst.iso \
+#--boot cdrom,hd
 #
 #sudo virt-install --name d11_s_s01 \
 #--os-variant debian11 \
