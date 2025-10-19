@@ -29,10 +29,11 @@
 ##./veracrypt-1.23-setup-console-x64
 cd /tmp
 #wget https://launchpad.net/veracrypt/trunk/1.25.9/+download/veracrypt-1.25.9-Debian-12-amd64.deb
-wget https://launchpadlibrarian.net/674243941/veracrypt-1.25.9-Debian-12-amd64.deb
-sudo dpkg -i veracrypt-1.25.9-Debian-12-amd64.deb
+#wget https://launchpadlibrarian.net/674243941/veracrypt-1.25.9-Debian-12-amd64.deb
+wget https://launchpadlibrarian.net/819204026/veracrypt-1.26.24-Debian-13-amd64.deb
+sudo dpkg -i veracrypt-1.26.24-Debian-13-amd64.deb
 sudo apt install -f -y
-rm veracrypt-1.25.9-Debian-12-amd64.deb
+rm veracrypt-1.26.24-Debian-13-amd64.deb
 #
 mkdir -p /home/$USER/.local/share/applications/
 #
