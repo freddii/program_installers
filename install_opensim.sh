@@ -17,9 +17,10 @@ fi
 mkdir -p /home/$USER/programs_setup/$folder_name
 cd /home/$USER/programs_setup/$folder_name
 wget -q --show-progress http://opensimulator.org/images/8/88/Opensimulator.svg
-#wget -qO - http://opensimulator.org/dist/opensim-0.9.2.2.tar.gz | tar xzf -
-wget --show-progress -qO - $(wget http://opensimulator.org/wiki/Download -O - | egrep 'http://.*/.*/opensim-[0-9,_.-]{1,20}.tar.gz' -o) | tar xzf -
-version_number=$(wget -q http://opensimulator.org/wiki/Download -O - | egrep 'http://.*/.*/opensim-[0-9,_.-]{1,20}.tar.gz' -o | grep -Po '(?<=(opensim-)).*(?=.tar)')
+wget --show-progress -qO - http://opensimulator.org/dist/opensim-0.9.2.2.tar.gz | tar xzf -
+#wget --show-progress -qO - $(wget http://opensimulator.org/wiki/Download -O - | egrep 'http://.*/.*/opensim-[0-9,_.-]{1,20}.tar.gz' -o) | tar xzf -
+#version_number=$(wget -q http://opensimulator.org/wiki/Download -O - | egrep 'http://.*/.*/opensim-[0-9,_.-]{1,20}.tar.gz' -o | grep -Po '(?<=(opensim-)).*(?=.tar)')
+version_number="0.9.2.2"
 #
 cat << EOF | tee /home/$USER/.local/share/applications/opensim.desktop
 [Desktop Entry]
