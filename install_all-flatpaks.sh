@@ -1,5 +1,5 @@
 #!/bin/bash
-#to run this script go into the folder where it is then run: ./install_drawio.sh
+#to run this script go into the folder where it is then run: ./install_all-flatpaks.sh
 
 set -eu
 
