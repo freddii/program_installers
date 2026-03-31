@@ -41,7 +41,7 @@ wget --show-progress -qO - http://opensimulator.org/dist/opensim-0.9.3.0.tar.gz 
 #version_number=$(wget -q http://opensimulator.org/wiki/Download -O - | egrep 'http://.*/.*/opensim-[0-9,_.-]{1,20}.tar.gz' -o | grep -Po '(?<=(opensim-)).*(?=.tar)')
 version_number="0.9.3.0"
 #
-cat << EOF | tee /home/$USER/.local/share/applications/opensim.desktop
+cat << EOF | tee /home/$USER/.local/share/applications/opensimdotnet.desktop
 [Desktop Entry]
 Name=Opensimulatordotnet
 Comment=start Opensimulator
