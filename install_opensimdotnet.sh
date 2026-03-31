@@ -47,7 +47,7 @@ cat << EOF | tee /home/$USER/.local/share/applications/opensimdotnet.desktop
 Name=Opensimulatordotnet
 Comment=start Opensimulator
 Exec=/usr/bin/tmux new-session -d -s opensimdotnet_run sh -c 'cd /home/xxUserxx/programs_setup/opensimdotnet/opensim-x/bin/;sh dotnet OpenSim.dll'
-Icon=/home/xxUserxx/programs_setup/opensim/Opensimulator.svg
+Icon=/home/xxUserxx/programs_setup/opensimdotnet/Opensimulator.svg
 Terminal=false
 Type=Application
 Categories=Application;Network;
