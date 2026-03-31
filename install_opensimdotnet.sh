@@ -39,6 +39,7 @@ wget -q --show-progress http://opensimulator.org/images/8/88/Opensimulator.svg
 wget --show-progress -qO - http://opensimulator.org/dist/opensim-0.9.3.0.tar.gz | tar xzf -
 #wget --show-progress -qO - $(wget http://opensimulator.org/wiki/Download -O - | egrep 'http://.*/.*/opensim-[0-9,_.-]{1,20}.tar.gz' -o) | tar xzf -
 #version_number=$(wget -q http://opensimulator.org/wiki/Download -O - | egrep 'http://.*/.*/opensim-[0-9,_.-]{1,20}.tar.gz' -o | grep -Po '(?<=(opensim-)).*(?=.tar)')
+mkdir -p /home/$USER/.local/share/applications
 version_number="0.9.3.0"
 #
 cat << EOF | tee /home/$USER/.local/share/applications/opensimdotnet.desktop
