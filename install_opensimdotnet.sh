@@ -20,7 +20,7 @@ rm packages-microsoft-prod.deb
  
 # Update packages
 sudo apt update
-sudo apt install dotnet-sdk-8.0
+sudo apt install dotnet-sdk-8.0 -y
 sudo apt install apt-utils libgdiplus libc6-dev -y
 
 dpkg -l | grep -qw tmux || sudo apt-get install tmux -y
