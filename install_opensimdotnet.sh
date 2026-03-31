@@ -43,9 +43,9 @@ version_number="0.9.3.0"
 #
 cat << EOF | tee /home/$USER/.local/share/applications/opensim.desktop
 [Desktop Entry]
-Name=Opensimulator
+Name=Opensimulatordotnet
 Comment=start Opensimulator
-Exec=/usr/bin/tmux new-session -d -s opensim_run sh -c 'cd /home/xxUserxx/programs_setup/opensim/opensim-x/bin/;sh dotnet OpenSim.dll'
+Exec=/usr/bin/tmux new-session -d -s opensimdotnet_run sh -c 'cd /home/xxUserxx/programs_setup/opensim/opensim-x/bin/;sh dotnet OpenSim.dll'
 Icon=/home/xxUserxx/programs_setup/opensim/Opensimulator.svg
 Terminal=false
 Type=Application
